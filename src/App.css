@@ -1,5 +1,9 @@
 .App {
   text-align: center;
+  background: #000000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .App-logo {
@@ -40,9 +44,71 @@
 .header {
   display: grid;
   grid-template-columns: 20% 60% 20%;
+  background: #501b1d;
+  width: 100%;
+  height: 10em;
+  box-sizing: border-box;
 }
 
 .Navbar {
   display: flex;
   flex-direction: row;
+}
+
+.articleCard {
+  width: 877px;
+  height: 250px;
+  background: #ffffff;
+  margin-bottom: 1em;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  display: grid;
+}
+
+.commentsCard {
+  width: 885px;
+  height: 200px;
+
+  background: #ffffff;
+  box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 45px;
+}
+
+.articleList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #f1f1f1;
+  width: 1500px;
+}
+
+.topicList {
+  display: flex;
+  margin: 10px;
+}
+
+li {
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.singleArticle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #f1f1f1;
+  width: 1500px;
+}
+
+.singleArticleCard {
+  width: 85%;
+  height: 250px;
+  background: #ffffff;
+  margin-bottom: 1em;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  display: grid;
+}
+
+a {
+  text-decoration: none;
+  color: #000000;
 }

@@ -1,5 +1,9 @@
 import React from "react";
 
 export default function Home() {
-  return <div>Welcome to NC News!</div>;
+  return (
+    <div>
+      <p>Welcome to NC News!</p>
+    </div>
+  );
 }
