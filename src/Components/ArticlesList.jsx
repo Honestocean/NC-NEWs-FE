@@ -3,12 +3,23 @@ import * as api from "../api";
 import ArticleCard from "./ArticleCard";
 
 export default class ArticlesList extends Component {
-  state = { articles: [], sortBy: null };
+  state = { articles: [], sortBy: null, isLoading: true, err: null };
 
   render() {
+    const { isLoading } = this.state;
+    const { err } = this.state;
+
+    if (isLoading) return <p className="homeboy">Loading</p>;
+    if (err)
+      return (
+        <p>
+          {err.status} : {err.msg} m
+        </p>
+      );
+
     return (
       <div className="articleList">
-        <h3>Articles List</h3>
+        <h3>Articles</h3>
         <select onChange={this.sortArticles}>
           <option value="votes">Votes</option>
           <option value="comment_count">Comments</option>
@@ -39,9 +50,17 @@ export default class ArticlesList extends Component {
   }
 
   fetchAllArticles = (topic, sortBy) => {
-    api.getArticles(topic, sortBy).then(articles => {
-      this.setState({ articles });
-    });
+    api
+      .getArticles(topic, sortBy)
+      .then(articles => {
+        this.setState({ articles, isLoading: false });
+      })
+      .catch(err => {
+        console.log(err);
+        const { msg } = err.resposne;
+        const { status } = err.response;
+        this.setState({ err: { status, msg } });
+      });
   };
 
   sortArticles = event => {

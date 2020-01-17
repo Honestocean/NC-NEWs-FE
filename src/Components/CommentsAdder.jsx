@@ -3,15 +3,19 @@ import * as api from "../api";
 import React, { Component } from "react";
 
 export default class CommentsAdder extends Component {
-  state = { body: "asd", user: this.props.loggedIn };
+  state = { body: "", user: this.props.loggedIn };
 
   render() {
     return (
       <div>
-        <h3>Add comments</h3>
         <form onSubmit={this.submitComment}>
-          <label htmlFor="Comment">Comment</label>
-          <input type="text" name="Comment" onChange={this.passInfo}></input>
+          <label htmlFor="Comment">Make a Comment</label>
+          <input
+            value={this.state.body}
+            type="text"
+            name="Comment"
+            onChange={this.passInfo}
+          ></input>
           <button type="submit">Submit</button>
         </form>
       </div>
@@ -27,6 +31,7 @@ export default class CommentsAdder extends Component {
 
     api.addCommentsById(id, user, body).then(comment => {
       this.props.optimisticRender(comment);
+      this.setState({ body: "" });
     });
   };
 

@@ -8,7 +8,8 @@ export default function ArticleCard({ article }) {
       <Link to={`/${article.article_id}`}>
         <h4>{article.title}</h4>
         <p>{article.body.slice(0, 80)}...</p>
-        <p>{article.author}</p>
+        <p>User: {article.author}</p>
+        <p>Date: {article.created_at}</p>
       </Link>
       <Voter votes={article.votes} id={article.article_id} card="articles" />
     </li>

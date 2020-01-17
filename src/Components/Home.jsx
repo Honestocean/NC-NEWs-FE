@@ -3,7 +3,7 @@ import React from "react";
 export default function Home() {
   return (
     <div>
-      <p>Welcome to NC News!</p>
+      <h2 className="homeboy">Welcome to NC News!</h2>
     </div>
   );
 }

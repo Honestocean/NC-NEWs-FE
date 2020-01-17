@@ -9,7 +9,7 @@ export default class CommentsList extends Component {
   render() {
     const { loggedIn } = this.props;
 
-    if (this.state.isLoading) return <p>LoadviewComments: trueing</p>;
+    if (this.state.isLoading) return <p>Loading</p>;
     if (this.state.err)
       return (
         <p>

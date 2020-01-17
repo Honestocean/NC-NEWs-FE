@@ -14,8 +14,7 @@ export default class Voter extends Component {
   render() {
     const { votes } = this.props;
     return (
-      <div>
-        <p>votes : {votes + this.state.votesChange}</p>
+      <div className="votes">
         <button
           disabled={this.state.voted}
           onClick={() => {
@@ -24,6 +23,7 @@ export default class Voter extends Component {
         >
           upvote
         </button>
+        <p>Votes : {votes + this.state.votesChange}</p>
         <button
           disabled={this.state.voted}
           onClick={() => {

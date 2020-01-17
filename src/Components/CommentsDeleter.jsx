@@ -1,13 +1,20 @@
 import React from "react";
 import * as api from "../api";
 
-export default function CommentsDeleter({ id, setDeletedComment }) {
+export default function CommentsDeleter({
+  id,
+  setDeletedComment,
+  loggedIn,
+  author
+}) {
   const deleteComments = () => {
-    setDeletedComment(id);
-    api.destroyCommentsById(id).then(res => {});
+    if (loggedIn === author) {
+      setDeletedComment(id);
+      api.destroyCommentsById(id);
+    }
   };
   return (
-    <div>
+    <div className="commentsDeleter">
       <button onClick={deleteComments}>Delete</button>
     </div>
   );
