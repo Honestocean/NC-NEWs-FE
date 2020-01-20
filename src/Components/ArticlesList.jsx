@@ -25,7 +25,7 @@ export default class ArticlesList extends Component {
           <option value="comment_count">Comments</option>
           <option value="created_at">Date</option>
         </select>
-        <ul>
+        <ul className="list">
           {this.state.articles.map(article => {
             return <ArticleCard article={article} />;
           })}

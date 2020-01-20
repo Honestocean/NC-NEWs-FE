@@ -6,6 +6,10 @@
   align-items: center;
 }
 
+body {
+  width: inherit;
+}
+
 h1 {
   color: #adadad;
 }
@@ -74,13 +78,41 @@ h1 {
 }
 
 .articleCard {
-  width: 877px;
-  height: 250px;
+  width: 70%;
+  height: 17em;
   background: #ffffff;
   margin-bottom: 1em;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  display: grid;
+  display: flex;
+  flex-direction: column;
   border-radius: 45px;
+  align-items: center;
+}
+
+.articleCardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: inherit;
+}
+
+.articleCardBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: inherit;
+  height: 70%;
+}
+
+.articleLink {
+  width: inherit;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: inherit;
 }
 
 .articleCard:hover {
@@ -131,13 +163,14 @@ h1 {
 .votes {
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 .articleList {
   display: flex;
   flex-direction: column;
   align-items: center;
   background: #f1f1f1;
-  width: 1500px;
+  width: 90em;
 }
 
 li {
@@ -155,11 +188,21 @@ li {
 
 .singleArticleCard {
   width: 85%;
-  height: 400px;
+  height: 25em;
   background: #ffffff;
   margin-bottom: 1em;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.singleArticleCardBottom {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
 }
 
 a {
