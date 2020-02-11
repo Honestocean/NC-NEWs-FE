@@ -13,7 +13,7 @@ export default class ArticlesList extends Component {
     if (err)
       return (
         <p>
-          {err.status} : {err.msg} m
+          {err.status} : {err.msg}
         </p>
       );
 
@@ -27,7 +27,7 @@ export default class ArticlesList extends Component {
         </select>
         <ul className="list">
           {this.state.articles.map(article => {
-            return <ArticleCard article={article} />;
+            return <ArticleCard article={article} key={article.article_id} />;
           })}
         </ul>
       </div>
@@ -35,16 +35,16 @@ export default class ArticlesList extends Component {
   }
 
   componentDidMount() {
-    this.fetchAllArticles();
+    const { topic } = this.props;
+    const { sortBy } = this.state;
+    this.fetchAllArticles(topic, sortBy);
   }
 
   componentDidUpdate(prevProps, prevState) {
     const { topic } = this.props;
     const { sortBy } = this.state;
-    if (
-      this.props.topic !== prevProps.topic ||
-      this.state.sortBy !== prevState.sortBy
-    ) {
+
+    if (topic !== prevProps.topic || sortBy !== prevState.sortBy) {
       this.fetchAllArticles(topic, sortBy);
     }
   }
@@ -56,10 +56,10 @@ export default class ArticlesList extends Component {
         this.setState({ articles, isLoading: false });
       })
       .catch(err => {
-        console.log(err);
-        const { msg } = err.resposne;
+        const { msg } = err.response.data;
         const { status } = err.response;
-        this.setState({ err: { status, msg } });
+
+        this.setState({ err: { status, msg }, isLoading: false });
       });
   };
 

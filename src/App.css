@@ -1,3 +1,7 @@
+.html {
+  width: 100%;
+}
+
 .App {
   text-align: center;
   background: #123c69;
@@ -13,13 +17,7 @@ body {
 h1 {
   color: #adadad;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
+/*
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -30,18 +28,9 @@ h1 {
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
+*/
 .App-link {
   color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
 
 .header {
@@ -53,20 +42,44 @@ h1 {
 }
 
 .innerHeader {
-  width: 95%;
+  width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
 }
 
 .Navbar {
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  width: 40em;
+  /* justify-content: center;
+  align-items: center; */
+}
+
+.navBarTop {
+  display: flex;
+  height: 40%;
+}
+
+.navbarBottom {
+  display: flex;
+  height: 25%;
+  width: inherit;
+}
+
+.log {
+  width: 25%;
+}
+
+.title {
+  width: 25%;
 }
 
 .innerMenu {
   display: flex;
   justify-content: center;
+  width: 50%;
 }
 
 .topicList {
@@ -77,9 +90,24 @@ h1 {
   align-items: baseline;
 }
 
+.router {
+  display: flex;
+  flex-direction: column;
+  align-items: centers;
+  width: 90%;
+}
+
+.homePage {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .articleCard {
-  width: 70%;
-  height: 17em;
+  width: 100%;
+  height: 19em;
   background: #ffffff;
   margin-bottom: 1em;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -108,11 +136,18 @@ h1 {
   width: inherit;
 }
 
+.ul {
+  all: none;
+}
+
 .list {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: inherit;
+  justify-content: center;
+  width: 100%;
+  margin: 0px, 0px;
+  padding-inline-start: 0px;
 }
 
 .articleCard:hover {
@@ -120,7 +155,7 @@ h1 {
 }
 
 .commentsCard {
-  width: 70%;
+  width: 100%;
   height: 30%;
   display: flex;
   flex-direction: column;
@@ -162,15 +197,31 @@ h1 {
 
 .votes {
   display: flex;
-  flex-direction: column;
+
   justify-content: center;
+  align-content: center;
+  width: 60%;
 }
+
+.upVoter {
+  /* Vector */
+
+  position: absolute;
+  left: 16.67%;
+  right: 16.67%;
+  top: 16.67%;
+  bottom: 16.67%;
+
+  background: #000000;
+}
+
 .articleList {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   background: #f1f1f1;
-  width: 90em;
+  width: 100%;
 }
 
 li {
@@ -183,12 +234,12 @@ li {
   flex-direction: column;
   align-items: center;
   background: #f1f1f1;
-  width: 1500px;
+  width: 100%;
 }
 
 .singleArticleCard {
-  width: 85%;
-  height: 25em;
+  width: 100%;
+  height: 100%;
   background: #ffffff;
   margin-bottom: 1em;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -197,13 +248,13 @@ li {
   align-items: center;
   justify-content: space-evenly;
 }
-
+/* 
 .singleArticleCardBottom {
   width: 90%;
   display: flex;
   justify-content: space-between;
   align-items: stretch;
-}
+} */
 
 a {
   text-decoration: none;
@@ -222,7 +273,6 @@ button {
   background-color: #64485c;
   border: none;
   color: white;
-  padding: 15px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -243,4 +293,29 @@ input[type="text"] {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+}
+
+ul {
+  padding-inline-start: 0px;
+}
+
+.intro {
+  color: white;
+}
+
+.newspaper {
+  width: 100%;
+  height: 100%;
+}
+
+/*media query*/
+
+@media only screen and (max-width: 700px) {
+  html {
+    width: 100%;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
 }

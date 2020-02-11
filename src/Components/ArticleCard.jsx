@@ -5,7 +5,7 @@ import moment from "moment";
 
 export default function ArticleCard({ article }) {
   return (
-    <li key={article.article_id} className="articleCard">
+    <li className="articleCard">
       <Link to={`/${article.article_id}`} className="articleLink">
         <div className="articleCardTop">
           <p></p>

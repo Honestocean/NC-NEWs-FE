@@ -14,7 +14,7 @@ export default class App extends Component {
     return (
       <div className="App">
         <Header loggedIn={loggedIn} />
-        <Router>
+        <Router className="router">
           <Home path="/" />
           <ArticlesList path="/articles" />
           <ArticlesList path="articles/:topic" />
